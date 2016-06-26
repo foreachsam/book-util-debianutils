@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+
+<title>debianutils - debianutils 使用筆記</title>
+
+
+<link rel="canonical" href="https://foreachsam.github.io/book-util-debianutils/book/content/deb-package/debianutils/">
+
+
+<meta name="author" content="foreachsam">
+
+
+<meta property="og:url" content="https://foreachsam.github.io/book-util-debianutils/book/content/deb-package/debianutils/">
+<meta property="og:title" content="debianutils - debianutils 使用筆記">
+
+<meta name="apple-mobile-web-app-title" content="debianutils - debianutils 使用筆記">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../assets/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="../../../../../../assets/images/favicon.ico">
+<style>
+	@font-face {
+		font-family: 'Icon';
+		src: url('../../../assets/fonts/icon.eot?52m981');
+		src: url('../../../assets/fonts/icon.eot?#iefix52m981') format('embedded-opentype'),
+		url('../../../assets/fonts/icon.woff?52m981') format('woff'),
+		url('../../../assets/fonts/icon.ttf?52m981') format('truetype'),
+		url('../../../assets/fonts/icon.svg?52m981#icon') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+</style>
+<link rel="stylesheet" href="../../../assets/stylesheets/application-0dac3e5884.css"> 
+<link rel="stylesheet" href="../../../assets/stylesheets/palettes-05ab2406df.css">     
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+<style>
+	body,
+	input {
+		font-family: 'Roboto',
+		Helvetica,
+		Arial,
+		sans-serif;
+	}
+
+	pre,
+	code {
+		font-family: 'Roboto Mono',
+		'Courier New',
+		'Courier',
+		monospace;
+	}
+</style>
+ 
+<script src="../../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+
+
+</head>
+
+
+  
+
+<body class="palette-primary-green palette-accent-light-green">
+	
+	<div class="backdrop">
+		<div class="backdrop-paper"></div>
+	</div>
+	<input class="toggle" type="checkbox" id="toggle-drawer">
+	<input class="toggle" type="checkbox" id="toggle-search">
+	<label class="toggle-button overlay" for="toggle-drawer"></label>
+	<header class="header">
+		<nav aria-label="Header">
+	<div class="bar default">
+		<div class="button button-menu" role="button" aria-label="Menu">
+			<label class="toggle-button icon icon-menu" for="toggle-drawer">
+				<span></span>
+			</label>
+		</div>
+		<div class="stretch">
+			<div class="title">
+				
+				<span class="path">
+            
+              
+                deb package <i class="icon icon-link"></i>
+              
+            
+          </span>  debianutils
+			</div>
+		</div>
+		  
+		<div class="button button-github" role="button" aria-label="GitHub">
+			<a href="https://github.com/foreachsam/book-util-debianutils" title="@foreachsam/book-util-debianutils on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+		</div>
+		
+		<div class="button button-search" role="button" aria-label="Search">
+			<label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+		</div>
+	</div>
+	<div class="bar search">
+		<div class="button button-close" role="button" aria-label="Close">
+			<label class="toggle-button icon icon-back" for="toggle-search"></label>
+		</div>
+		<div class="stretch">
+			<div class="field">
+				<input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+			</div>
+		</div>
+		<div class="button button-reset" role="button" aria-label="Search">
+			<button class="toggle-button icon icon-close" id="reset-search"></button>
+		</div>
+	</div>
+</nav>
+	</header>
+	<main class="main">
+		
+		<div class="drawer">
+			<nav aria-label="Navigation">
+
+	<a href="https://foreachsam.github.io/book-util-debianutils/book" class="project" title="debianutils 使用筆記">
+		<div class="banner">
+
+			<div class="name">
+				<strong>debianutils 使用筆記<span class="version"></span></strong>
+
+			</div>
+		</div>
+	</a>
+	<div class="scrollable">
+		<div class="wrapper">
+
+			<div class="toc">
+				<ul>
+
+	
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="首頁" href="../../.." itemprop="url">
+			首頁
+    	</a>
+	</div>
+	
+</li>
+
+
+	
+<li>
+	<span class="section">參考文件</span>
+	<ul>
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="manual" href="../../reference/manual/" itemprop="url">
+			manual
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+	</ul>
+</li>
+
+
+	
+<li>
+	<span class="section">deb package</span>
+	<ul>
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="index" href="../" itemprop="url">
+			index
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="current" title="debianutils" href="./" itemprop="url">
+			debianutils
+    	</a>
+	</div>
+	    
+	<ul>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="下載套件" href="#_1" >
+                	下載套件
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="解開套件" href="#_2" >
+                	解開套件
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="觀看資料夾結構" href="#_3" >
+                	觀看資料夾結構
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="manpage" href="#manpage" >
+                	manpage
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="下載 Source Package" href="#source-package" >
+                	下載 Source Package
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="套件資訊" href="#_4" >
+                	套件資訊
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="原始碼套件資訊" href="#_5" >
+                	原始碼套件資訊
+				</a>
+			</div>
+		</li>
+		
+	</ul>
+	 
+</li>
+
+
+		
+	</ul>
+</li>
+
+
+	
+<li>
+	<span class="section">command</span>
+	<ul>
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="run-parts" href="../../command/run-parts/" itemprop="url">
+			run-parts
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+	</ul>
+</li>
+
+
+				</ul>
+
+				<hr>
+				<span class="section">The author</span>
+				<ul>
+	
+					<li>
+						<a href="https://foreachsam.github.io/" target="_blank" title="foreachsam">
+                  			foreachsam
+            			</a>
+					</li>
+	
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</nav>
+		</div>
+		<article class="article">
+			<div class="wrapper">
+				 <h1 id="debianutils">debianutils 套件探索</h1>
+<h2 id="_1">下載套件</h2>
+<p>下載「<a href="http://packages.ubuntu.com/xenial/debianutils">debianutils</a>」這個套件。</p>
+<pre class="code"><code class="language-sh">$ apt download debianutils</code></pre>
+
+
+<h2 id="_2">解開套件</h2>
+<p>解開「debianutils_4.7_amd64.deb」</p>
+<pre class="code"><code class="language-sh">$ dpkg -x debianutils_4.7_amd64.deb debianutils</code></pre>
+
+
+<h2 id="_3">觀看資料夾結構</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ tree debianutils</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>debianutils
+├── bin
+│   ├── run-parts
+│   ├── tempfile
+│   └── which
+├── sbin
+│   └── installkernel
+└── usr
+    ├── bin
+    │   ├── ischroot
+    │   └── savelog
+    ├── sbin
+    │   ├── add-shell
+    │   └── remove-shell
+    └── share
+        ├── debianutils
+        │   └── shells
+        ├── doc
+        │   └── debianutils
+        │       ├── changelog.gz
+        │       ├── copyright
+        │       └── README.shells.gz
+        └── man
+            ├── de
+            │   ├── man1
+            │   │   ├── tempfile.1.gz
+            │   │   └── which.1.gz
+            │   └── man8
+            │       ├── add-shell.8.gz
+            │       ├── installkernel.8.gz
+            │       ├── remove-shell.8.gz
+            │       ├── run-parts.8.gz
+            │       └── savelog.8.gz
+            ├── es
+            │   ├── man1
+            │   │   ├── tempfile.1.gz
+            │   │   └── which.1.gz
+            │   └── man8
+            │       ├── add-shell.8.gz
+            │       ├── installkernel.8.gz
+            │       ├── remove-shell.8.gz
+            │       ├── run-parts.8.gz
+            │       └── savelog.8.gz
+            ├── fr
+            │   ├── man1
+            │   │   ├── tempfile.1.gz
+            │   │   └── which.1.gz
+            │   └── man8
+            │       ├── add-shell.8.gz
+            │       ├── installkernel.8.gz
+            │       ├── remove-shell.8.gz
+            │       ├── run-parts.8.gz
+            │       └── savelog.8.gz
+            ├── it
+            │   ├── man1
+            │   │   ├── tempfile.1.gz
+            │   │   └── which.1.gz
+            │   └── man8
+            │       ├── add-shell.8.gz
+            │       ├── installkernel.8.gz
+            │       ├── remove-shell.8.gz
+            │       ├── run-parts.8.gz
+            │       └── savelog.8.gz
+            ├── ja
+            │   ├── man1
+            │   │   ├── tempfile.1.gz
+            │   │   └── which.1.gz
+            │   └── man8
+            │       ├── add-shell.8.gz
+            │       ├── installkernel.8.gz
+            │       ├── remove-shell.8.gz
+            │       ├── run-parts.8.gz
+            │       └── savelog.8.gz
+            ├── man1
+            │   ├── ischroot.1.gz
+            │   ├── tempfile.1.gz
+            │   └── which.1.gz
+            ├── man8
+            │   ├── add-shell.8.gz
+            │   ├── installkernel.8.gz
+            │   ├── remove-shell.8.gz
+            │   ├── run-parts.8.gz
+            │   └── savelog.8.gz
+            ├── pl
+            │   ├── man1
+            │   │   ├── tempfile.1.gz
+            │   │   └── which.1.gz
+            │   └── man8
+            │       ├── add-shell.8.gz
+            │       ├── installkernel.8.gz
+            │       ├── remove-shell.8.gz
+            │       ├── run-parts.8.gz
+            │       └── savelog.8.gz
+            └── sl
+                ├── man1
+                │   ├── tempfile.1.gz
+                │   └── which.1.gz
+                └── man8
+                    ├── add-shell.8.gz
+                    ├── installkernel.8.gz
+                    ├── remove-shell.8.gz
+                    ├── run-parts.8.gz
+                    └── savelog.8.gz
+
+33 directories, 69 files</code></pre>
+
+
+<p>若有安裝這個套件的話，可執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -L debianutils</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/debianutils
+/usr/share/doc/debianutils/copyright
+/usr/share/doc/debianutils/README.shells.gz
+/usr/share/doc/debianutils/changelog.gz
+/usr/share/debianutils
+/usr/share/debianutils/shells
+/usr/share/man
+/usr/share/man/sl
+/usr/share/man/sl/man1
+/usr/share/man/sl/man1/tempfile.1.gz
+/usr/share/man/sl/man1/which.1.gz
+/usr/share/man/sl/man8
+/usr/share/man/sl/man8/add-shell.8.gz
+/usr/share/man/sl/man8/savelog.8.gz
+/usr/share/man/sl/man8/installkernel.8.gz
+/usr/share/man/sl/man8/remove-shell.8.gz
+/usr/share/man/sl/man8/run-parts.8.gz
+/usr/share/man/pl
+/usr/share/man/pl/man1
+/usr/share/man/pl/man1/tempfile.1.gz
+/usr/share/man/pl/man1/which.1.gz
+/usr/share/man/pl/man8
+/usr/share/man/pl/man8/add-shell.8.gz
+/usr/share/man/pl/man8/savelog.8.gz
+/usr/share/man/pl/man8/installkernel.8.gz
+/usr/share/man/pl/man8/remove-shell.8.gz
+/usr/share/man/pl/man8/run-parts.8.gz
+/usr/share/man/man1
+/usr/share/man/man1/tempfile.1.gz
+/usr/share/man/man1/which.1.gz
+/usr/share/man/man1/ischroot.1.gz
+/usr/share/man/ja
+/usr/share/man/ja/man1
+/usr/share/man/ja/man1/tempfile.1.gz
+/usr/share/man/ja/man1/which.1.gz
+/usr/share/man/ja/man8
+/usr/share/man/ja/man8/add-shell.8.gz
+/usr/share/man/ja/man8/savelog.8.gz
+/usr/share/man/ja/man8/installkernel.8.gz
+/usr/share/man/ja/man8/remove-shell.8.gz
+/usr/share/man/ja/man8/run-parts.8.gz
+/usr/share/man/de
+/usr/share/man/de/man1
+/usr/share/man/de/man1/tempfile.1.gz
+/usr/share/man/de/man1/which.1.gz
+/usr/share/man/de/man8
+/usr/share/man/de/man8/add-shell.8.gz
+/usr/share/man/de/man8/savelog.8.gz
+/usr/share/man/de/man8/installkernel.8.gz
+/usr/share/man/de/man8/remove-shell.8.gz
+/usr/share/man/de/man8/run-parts.8.gz
+/usr/share/man/fr
+/usr/share/man/fr/man1
+/usr/share/man/fr/man1/tempfile.1.gz
+/usr/share/man/fr/man1/which.1.gz
+/usr/share/man/fr/man8
+/usr/share/man/fr/man8/add-shell.8.gz
+/usr/share/man/fr/man8/savelog.8.gz
+/usr/share/man/fr/man8/installkernel.8.gz
+/usr/share/man/fr/man8/remove-shell.8.gz
+/usr/share/man/fr/man8/run-parts.8.gz
+/usr/share/man/it
+/usr/share/man/it/man1
+/usr/share/man/it/man1/tempfile.1.gz
+/usr/share/man/it/man1/which.1.gz
+/usr/share/man/it/man8
+/usr/share/man/it/man8/add-shell.8.gz
+/usr/share/man/it/man8/savelog.8.gz
+/usr/share/man/it/man8/installkernel.8.gz
+/usr/share/man/it/man8/remove-shell.8.gz
+/usr/share/man/it/man8/run-parts.8.gz
+/usr/share/man/man8
+/usr/share/man/man8/add-shell.8.gz
+/usr/share/man/man8/savelog.8.gz
+/usr/share/man/man8/installkernel.8.gz
+/usr/share/man/man8/remove-shell.8.gz
+/usr/share/man/man8/run-parts.8.gz
+/usr/share/man/es
+/usr/share/man/es/man1
+/usr/share/man/es/man1/tempfile.1.gz
+/usr/share/man/es/man1/which.1.gz
+/usr/share/man/es/man8
+/usr/share/man/es/man8/add-shell.8.gz
+/usr/share/man/es/man8/savelog.8.gz
+/usr/share/man/es/man8/installkernel.8.gz
+/usr/share/man/es/man8/remove-shell.8.gz
+/usr/share/man/es/man8/run-parts.8.gz
+/usr/bin
+/usr/bin/savelog
+/usr/bin/ischroot
+/usr/sbin
+/usr/sbin/remove-shell
+/usr/sbin/add-shell
+/bin
+/bin/run-parts
+/bin/which
+/bin/tempfile
+/sbin
+/sbin/installkernel</code></pre>
+
+
+<h2 id="manpage">manpage</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -L debianutils | grep '/man/man.*/' | sort</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/share/man/man1/ischroot.1.gz
+/usr/share/man/man1/tempfile.1.gz
+/usr/share/man/man1/which.1.gz
+/usr/share/man/man8/add-shell.8.gz
+/usr/share/man/man8/installkernel.8.gz
+/usr/share/man/man8/remove-shell.8.gz
+/usr/share/man/man8/run-parts.8.gz
+/usr/share/man/man8/savelog.8.gz</code></pre>
+
+
+<ul>
+<li>$ man 1 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/ischroot.1.html">ischroot</a></li>
+<li>$ man 1 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/tempfile.1.html">tempfile</a></li>
+<li>$ man 1 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/which.1.html">which</a></li>
+<li>$ man 8 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man8/add-shell.8.html">add-shell</a></li>
+<li>$ man 8 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man8/installkernel.8.html">installkernel</a></li>
+<li>$ man 8 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man8/remove-shell.8.html">remove-shell</a></li>
+<li>$ man 8 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man8/run-parts.8.html">run-parts</a></li>
+<li>$ man 8 <a href="http://manpages.ubuntu.com/manpages/xenial/en/man8/savelog.8.html">savelog</a></li>
+</ul>
+<h2 id="source-package">下載 Source Package</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ apt source debianutils</code></pre>
+
+
+<p>會下載「<a href="http://packages.ubuntu.com/source/xenial/debianutils">debianutils</a>」這個「Source Package」</p>
+<h2 id="_4">套件資訊</h2>
+<p>網址: <a href="http://packages.ubuntu.com/xenial/debianutils">http://packages.ubuntu.com/xenial/debianutils</a></p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ apt show debianutils</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Package: debianutils
+Version: 4.7
+Priority: required
+Essential: yes
+Section: utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com&gt;
+Original-Maintainer: Clint Adams &lt;clint@debian.org&gt;
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 218 kB
+Pre-Depends: libc6 (&gt;= 2.15)
+Depends: sensible-utils
+Replaces: manpages-pl (&lt;&lt; 1:0.5)
+Task: minimal
+Supported: 5y
+Download-Size: 85.4 kB
+APT-Manual-Installed: yes
+APT-Sources: http://tw.archive.ubuntu.com/ubuntu xenial/main amd64 Packages
+Description: Miscellaneous utilities specific to Debian
+ This package provides a number of small utilities which are used
+ primarily by the installation scripts of Debian packages, although
+ you may use them directly.
+ .
+ The specific utilities included are:
+ add-shell installkernel ischroot remove-shell run-parts savelog
+ tempfile which</code></pre>
+
+
+<h2 id="_5">原始碼套件資訊</h2>
+<p>網址: <a href="http://packages.ubuntu.com/source/xenial/debianutils">http://packages.ubuntu.com/source/xenial/debianutils</a></p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ apt showsrc debianutils</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Package: debianutils
+Binary: debianutils
+Version: 4.7
+Priority: required
+Section: utils
+Maintainer: Clint Adams &lt;clint@debian.org&gt;
+Architecture: any
+Standards-Version: 3.9.6
+Format: 3.0 (native)
+Directory: pool/main/d/debianutils
+Files:
+ 673c7cbb83f42ea021e870a6451035fc 1703 debianutils_4.7.dsc
+ 00186f527b35e2cecd4db593c6d512d0 156276 debianutils_4.7.tar.xz
+Uploaders: Manoj Srivastava &lt;srivasta@debian.org&gt;
+Vcs-Browser: https://anonscm.debian.org/cgit/users/clint/debianutils.git
+Vcs-Git: git://anonscm.debian.org/users/clint/debianutils.git
+Package-List:
+ debianutils deb utils required arch=any essential=yes
+Checksums-Sha1:
+ 1d802b242250693bad4a6aef6d995cb40aae5c02 1703 debianutils_4.7.dsc
+ 1d62ff7cf902c69a6f1ef071cead61a76ce01f86 156276 debianutils_4.7.tar.xz
+Checksums-Sha256:
+ 8dd1d66186f56bfe11bce5151b50c6909787d690bf90cc90212ea6deec186460 1703 debianutils_4.7.dsc
+ a269cacd40f52f2fa5d5636357714a49e8538459c16d77772efaa23711fe53d9 156276 debianutils_4.7.tar.xz</code></pre>
+				<aside class="copyright" role="note">
+					 Copyright (c) foreachsam &ndash;  Documentation built with
+					<a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using the
+					<a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a> theme.
+				</aside>
+				
+				<footer class="footer">
+					
+<nav class="pagination" aria-label="Footer">
+	<div class="previous">
+		
+		<a href="../" title="index">
+			<span class="direction">
+            上一頁
+          </span>
+			<div class="page">
+				<div class="button button-previous" role="button" aria-label="Previous">
+					<i class="icon icon-back"></i>
+				</div>
+				<div class="stretch">
+					<div class="title">
+						index
+					</div>
+				</div>
+			</div>
+		</a>
+		
+	</div>
+	<div class="next">
+		
+		<a href="../../command/run-parts/" title="run-parts">
+			<span class="direction">
+            下一頁
+          </span>
+			<div class="page">
+				<div class="stretch">
+					<div class="title">
+						run-parts
+					</div>
+				</div>
+				<div class="button button-next" role="button" aria-label="Next">
+					<i class="icon icon-forward"></i>
+				</div>
+			</div>
+		</a>
+		
+	</div>
+</nav>
+
+				</footer>
+				
+			</div>
+		</article>
+		<div class="results" role="status" aria-live="polite">
+			<div class="scrollable">
+				<div class="wrapper">
+					<div class="meta"></div>
+					<div class="list"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script>
+		var base_url = '../../..';
+		var repo_id = '';
+	</script>
+	<script src="../../../assets/javascripts/application-997097ee0c.js"></script>
+	
+
+
+<script>
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document,
+		'script', '//www.google-analytics.com/analytics.js', 'ga');
+	/* General initialization */
+	ga('create', 'UA-56999876-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+	/* Track outbound links */
+	var buttons = document.querySelectorAll('a');
+	Array.prototype.map.call(buttons, function(item) {
+		if (item.host != document.location.host) {
+			item.addEventListener('click', function() {
+				var action = item.getAttribute('data-action') || 'follow';
+				ga('send', 'event', 'outbound', action, item.href);
+			});
+		}
+	});
+	/* Register handler to log search on blur */
+	var query = document.querySelector('.query');
+	query.addEventListener('blur', function() {
+		if (this.value) {
+			var path = document.location.pathname;
+			ga('send', 'pageview', path + '?q=' + this.value);
+		}
+	});
+</script>
+
+
+</body>
+
+</html>
