@@ -279,6 +279,19 @@
 
 
 		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="which" href="../which/" itemprop="url">
+			which
+    	</a>
+	</div>
+	
+</li>
+
+
+		
 	</ul>
 </li>
 
@@ -374,9 +387,29 @@ or later for copying conditions.  There is NO warranty.</code></pre>
 <pre class="code"><code>run-parts: /bin/run-parts /usr/share/man/man8/run-parts.8.gz</code></pre>
 
 
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which run-parts</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/bin/run-parts</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ type run-parts</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>run-parts is /bin/run-parts</code></pre>
+
+
 <h2 id="run-parts_1">查詢 run-parts 屬於那個套件</h2>
 <p>執行</p>
 <pre class="code"><code class="language-sh">$ dpkg -S /bin/run-parts</code></pre>
+
+
+<p>或是執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S $(which run-parts)</code></pre>
 
 
 <p>顯示</p>
@@ -443,6 +476,22 @@ or later for copying conditions.  There is NO warranty.</code></pre>
 		
 	</div>
 	<div class="next">
+		
+		<a href="../which/" title="which">
+			<span class="direction">
+            下一頁
+          </span>
+			<div class="page">
+				<div class="stretch">
+					<div class="title">
+						which
+					</div>
+				</div>
+				<div class="button button-next" role="button" aria-label="Next">
+					<i class="icon icon-forward"></i>
+				</div>
+			</div>
+		</a>
 		
 	</div>
 </nav>

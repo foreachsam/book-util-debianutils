@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+
+<title>which - debianutils 使用筆記</title>
+
+
+<link rel="canonical" href="https://foreachsam.github.io/book-util-debianutils/book/content/command/which/">
+
+
+<meta name="author" content="foreachsam">
+
+
+<meta property="og:url" content="https://foreachsam.github.io/book-util-debianutils/book/content/command/which/">
+<meta property="og:title" content="which - debianutils 使用筆記">
+
+<meta name="apple-mobile-web-app-title" content="which - debianutils 使用筆記">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../assets/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="../../../../../../assets/images/favicon.ico">
+<style>
+	@font-face {
+		font-family: 'Icon';
+		src: url('../../../assets/fonts/icon.eot?52m981');
+		src: url('../../../assets/fonts/icon.eot?#iefix52m981') format('embedded-opentype'),
+		url('../../../assets/fonts/icon.woff?52m981') format('woff'),
+		url('../../../assets/fonts/icon.ttf?52m981') format('truetype'),
+		url('../../../assets/fonts/icon.svg?52m981#icon') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+</style>
+<link rel="stylesheet" href="../../../assets/stylesheets/application-0dac3e5884.css"> 
+<link rel="stylesheet" href="../../../assets/stylesheets/palettes-05ab2406df.css">     
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+<style>
+	body,
+	input {
+		font-family: 'Roboto',
+		Helvetica,
+		Arial,
+		sans-serif;
+	}
+
+	pre,
+	code {
+		font-family: 'Roboto Mono',
+		'Courier New',
+		'Courier',
+		monospace;
+	}
+</style>
+ 
+<script src="../../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+
+
+</head>
+
+
+  
+
+<body class="palette-primary-pink palette-accent-light-pink">
+	
+	<div class="backdrop">
+		<div class="backdrop-paper"></div>
+	</div>
+	<input class="toggle" type="checkbox" id="toggle-drawer">
+	<input class="toggle" type="checkbox" id="toggle-search">
+	<label class="toggle-button overlay" for="toggle-drawer"></label>
+	<header class="header">
+		<nav aria-label="Header">
+	<div class="bar default">
+		<div class="button button-menu" role="button" aria-label="Menu">
+			<label class="toggle-button icon icon-menu" for="toggle-drawer">
+				<span></span>
+			</label>
+		</div>
+		<div class="stretch">
+			<div class="title">
+				
+				<span class="path">
+            
+              
+                command <i class="icon icon-link"></i>
+              
+            
+          </span>  which
+			</div>
+		</div>
+		  
+		<div class="button button-github" role="button" aria-label="GitHub">
+			<a href="https://github.com/foreachsam/book-util-debianutils" title="@foreachsam/book-util-debianutils on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+		</div>
+		
+		<div class="button button-search" role="button" aria-label="Search">
+			<label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+		</div>
+	</div>
+	<div class="bar search">
+		<div class="button button-close" role="button" aria-label="Close">
+			<label class="toggle-button icon icon-back" for="toggle-search"></label>
+		</div>
+		<div class="stretch">
+			<div class="field">
+				<input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+			</div>
+		</div>
+		<div class="button button-reset" role="button" aria-label="Search">
+			<button class="toggle-button icon icon-close" id="reset-search"></button>
+		</div>
+	</div>
+</nav>
+	</header>
+	<main class="main">
+		
+		<div class="drawer">
+			<nav aria-label="Navigation">
+
+	<a href="https://foreachsam.github.io/book-util-debianutils/book" class="project" title="debianutils 使用筆記">
+		<div class="banner">
+
+			<div class="name">
+				<strong>debianutils 使用筆記<span class="version"></span></strong>
+
+			</div>
+		</div>
+	</a>
+	<div class="scrollable">
+		<div class="wrapper">
+
+			<div class="toc">
+				<ul>
+
+	
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="首頁" href="../../.." itemprop="url">
+			首頁
+    	</a>
+	</div>
+	
+</li>
+
+
+	
+<li>
+	<span class="section">參考文件</span>
+	<ul>
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="manual" href="../../reference/manual/" itemprop="url">
+			manual
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+	</ul>
+</li>
+
+
+	
+<li>
+	<span class="section">deb package</span>
+	<ul>
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="index" href="../../deb-package/" itemprop="url">
+			index
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="debianutils" href="../../deb-package/debianutils/" itemprop="url">
+			debianutils
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+	</ul>
+</li>
+
+
+	
+<li>
+	<span class="section">command</span>
+	<ul>
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="" title="run-parts" href="../run-parts/" itemprop="url">
+			run-parts
+    	</a>
+	</div>
+	
+</li>
+
+
+		
+
+			
+<li>
+	<div itemscope itemtype="http://schema.org/Article">
+		<a class="current" title="which" href="./" itemprop="url">
+			which
+    	</a>
+	</div>
+	    
+	<ul>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="觀看 help" href="#help" >
+                	觀看 help
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="觀看版本" href="#_1" >
+                	觀看版本
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="觀看 manpage" href="#manpage" >
+                	觀看 manpage
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="查詢 which 放在那個位置" href="#which" >
+                	查詢 which 放在那個位置
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="查詢 which 屬於那個套件" href="#which_1" >
+                	查詢 which 屬於那個套件
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
+				<a title="使用範例" href="#_2" >
+                	使用範例
+				</a>
+			</div>
+		</li>
+		
+	</ul>
+	 
+</li>
+
+
+		
+	</ul>
+</li>
+
+
+				</ul>
+
+				<hr>
+				<span class="section">The author</span>
+				<ul>
+	
+					<li>
+						<a href="https://foreachsam.github.io/" target="_blank" title="foreachsam">
+                  			foreachsam
+            			</a>
+					</li>
+	
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</nav>
+		</div>
+		<article class="article">
+			<div class="wrapper">
+				 <h1 id="which-command">which command</h1>
+<h2 id="help">觀看 help</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which -h</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Illegal option -h
+Usage: /usr/bin/which [-a] args</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which --help</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Illegal option --
+Usage: /usr/bin/which [-a] args</code></pre>
+
+
+<h2 id="_1">觀看版本</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which --version</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Illegal option --
+Usage: /usr/bin/which [-a] args</code></pre>
+
+
+<h2 id="manpage">觀看 manpage</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ whatis which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>which (1)            - locate a command</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ man which</code></pre>
+
+
+<p>會看到「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/which.1.html">說明</a>」。</p>
+<h2 id="which">查詢 which 放在那個位置</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ type which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>which is hashed (/usr/bin/which)</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ whereis which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>which: /usr/bin/which /bin/which /usr/share/man/man1/which.1.gz</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which -a which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/bin/which
+/bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ ls /usr/bin/which -l</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>lrwxrwxrwx 1 root root 10 Apr 24  2016 /usr/bin/which -&gt; /bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ stat /usr/bin/which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>File: '/usr/bin/which' -&gt; '/bin/which'
+Size: 10            Blocks: 0          IO Block: 4096   symbolic link
+Device: 822h/2082d  Inode: 4195706     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2016-12-23 20:17:47.509825046 +0800
+Modify: 2016-04-24 00:13:14.455049698 +0800
+Change: 2016-04-24 00:13:14.455049698 +0800
+Birth: -</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ file /usr/bin/which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/bin/which: symbolic link to /bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ file /bin/which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/bin/which: POSIX shell script, ASCII text executable</code></pre>
+
+
+<p>執行下面指令，來觀看「/usr/bin/which」的內容，會看到「/bin/which」的內容。</p>
+<pre class="code"><code class="language-sh">$ less /usr/bin/which</code></pre>
+
+
+<p>執行下面指令，來觀看「/bin/which」的內容。</p>
+<pre class="code"><code class="language-sh">$ less /bin/which</code></pre>
+
+
+<blockquote>
+<p>註：「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/less.1.html">less</a>」可以改為「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/more.1.html">more</a>」或「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/vim.1.html">view</a>」或「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/vim.1.html">vim</a>」或「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/mcedit.1.html">mcedit</a>」或「其他文字編輯器」來觀看。</p>
+</blockquote>
+<h2 id="which_1">查詢 which 屬於那個套件</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S /usr/bin/which</code></pre>
+
+
+<p>或是執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S $(which which)</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>dpkg-query: no path found matching pattern /usr/bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S /bin/which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code class="language-sh">$ debianutils: /bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S $(which -a which)</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>dpkg-query: no path found matching pattern /usr/bin/which
+debianutils: /bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ grep '/usr/bin/which' /var/lib/dpkg/info/* -R -n</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/var/lib/dpkg/info/debianutils.postinst:14:    if [ ! -e /usr/bin/which ]
+/var/lib/dpkg/info/debianutils.postinst:16:     ln -s /bin/which /usr/bin/which
+/var/lib/dpkg/info/debianutils.postrm:11:    if test -L /usr/bin/which; then
+/var/lib/dpkg/info/debianutils.postrm:12:       rm /usr/bin/which
+/var/lib/dpkg/info/keyboard-configuration.postinst:8:# The same as /usr/bin/which - in order to make &quot;which&quot; available before</code></pre>
+
+
+<p>執行下面指令 (多加了 -A 3)</p>
+<pre class="code"><code class="language-sh">$ grep '/usr/bin/which' /var/lib/dpkg/info/* -R -n -A 3</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/var/lib/dpkg/info/debianutils.postinst:14:    if [ ! -e /usr/bin/which ]
+/var/lib/dpkg/info/debianutils.postinst-15-    then
+/var/lib/dpkg/info/debianutils.postinst:16:     ln -s /bin/which /usr/bin/which
+/var/lib/dpkg/info/debianutils.postinst-17-    fi
+/var/lib/dpkg/info/debianutils.postinst-18-    ;;
+/var/lib/dpkg/info/debianutils.postinst-19-
+--
+/var/lib/dpkg/info/debianutils.postrm:11:    if test -L /usr/bin/which; then
+/var/lib/dpkg/info/debianutils.postrm:12:       rm /usr/bin/which
+/var/lib/dpkg/info/debianutils.postrm-13-    fi
+/var/lib/dpkg/info/debianutils.postrm-14-        ;;
+/var/lib/dpkg/info/debianutils.postrm-15-    upgrade|failed-upgrade|purge|abort-install|abort-upgrade)
+--
+/var/lib/dpkg/info/keyboard-configuration.postinst:8:# The same as /usr/bin/which - in order to make &quot;which&quot; available before
+/var/lib/dpkg/info/keyboard-configuration.postinst-9-# /usr is mounted
+/var/lib/dpkg/info/keyboard-configuration.postinst-10-which () {
+/var/lib/dpkg/info/keyboard-configuration.postinst-11-    local IFS</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ view +14 /var/lib/dpkg/info/debianutils.postinst</code></pre>
+
+
+<p>或是執行</p>
+<pre class="code"><code class="language-sh">$ vi +14 /var/lib/dpkg/info/debianutils.postinst</code></pre>
+
+
+<p>開啟檔案後，就會將游標定位在第14行。</p>
+<p>或是執行下面指令，觀看「/var/lib/dpkg/info/debianutils.postinst」這個檔案的「14行~17行」</p>
+<pre class="code"><code class="language-sh">$ cat /var/lib/dpkg/info/debianutils.postinst | sed -n '14,17p'</code></pre>
+
+
+<p>或是執行</p>
+<pre class="code"><code class="language-sh">$ sed -n '14,17p' /var/lib/dpkg/info/debianutils.postinst</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>if [ ! -e /usr/bin/which ]
+then
+    ln -s /bin/which /usr/bin/which
+fi</code></pre>
+
+
+<p>表示「/usr/bin/which」這個檔案，是安裝「[url=http://packages.ubuntu.com/xenial/debianutils]debianutils[/url]」這個套件時，</p>
+<p>透過「/var/lib/dpkg/info/debianutils.postinst」這個「<a href="https://wiki.debian.org/MaintainerScripts">MaintainerScripts</a>」產生的。</p>
+<h2 id="_2">使用範例</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ which -a which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/bin/which
+/bin/which</code></pre>
+
+
+<p>搭配「dpkg -S」來使用</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S $(which ls)</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>coreutils: /bin/ls</code></pre>
+
+
+<p>表示「/bin/ls」是屬於「<a href="http://packages.ubuntu.com/xenial/coreutils">coreutils</a>」這個套件。</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S $(which -a which)</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>dpkg-query: no path found matching pattern /usr/bin/which
+debianutils: /bin/which</code></pre>
+
+
+<p>表示「/bin/which」是屬於「<a href="http://packages.ubuntu.com/xenial/debianutils">debianutils</a>」這個套件。</p>
+<blockquote>
+<p>註：</p>
+</blockquote>
+<p>關於「$(command)」的用法，</p>
+<p>請執行「$ info bash -n 'Command Substitution'」閱讀相關文件的內容，</p>
+<p>也可以從「Bash Reference Manual / <a href="https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html">3.5.4 Command Substitution</a>」找到。</p>
+<p>也可以執行「$ man <a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/bash.1.html">bash</a>」查詢「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/bash.1.html#contenttoc13">Command Substitution</a>」。</p>
+				<aside class="copyright" role="note">
+					 Copyright (c) foreachsam &ndash;  Documentation built with
+					<a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using the
+					<a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a> theme.
+				</aside>
+				
+				<footer class="footer">
+					
+<nav class="pagination" aria-label="Footer">
+	<div class="previous">
+		
+		<a href="../run-parts/" title="run-parts">
+			<span class="direction">
+            上一頁
+          </span>
+			<div class="page">
+				<div class="button button-previous" role="button" aria-label="Previous">
+					<i class="icon icon-back"></i>
+				</div>
+				<div class="stretch">
+					<div class="title">
+						run-parts
+					</div>
+				</div>
+			</div>
+		</a>
+		
+	</div>
+	<div class="next">
+		
+	</div>
+</nav>
+
+				</footer>
+				
+			</div>
+		</article>
+		<div class="results" role="status" aria-live="polite">
+			<div class="scrollable">
+				<div class="wrapper">
+					<div class="meta"></div>
+					<div class="list"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script>
+		var base_url = '../../..';
+		var repo_id = '';
+	</script>
+	<script src="../../../assets/javascripts/application-997097ee0c.js"></script>
+	
+
+
+<script>
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document,
+		'script', '//www.google-analytics.com/analytics.js', 'ga');
+	/* General initialization */
+	ga('create', 'UA-56999876-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+	/* Track outbound links */
+	var buttons = document.querySelectorAll('a');
+	Array.prototype.map.call(buttons, function(item) {
+		if (item.host != document.location.host) {
+			item.addEventListener('click', function() {
+				var action = item.getAttribute('data-action') || 'follow';
+				ga('send', 'event', 'outbound', action, item.href);
+			});
+		}
+	});
+	/* Register handler to log search on blur */
+	var query = document.querySelector('.query');
+	query.addEventListener('blur', function() {
+		if (this.value) {
+			var path = document.location.pathname;
+			ga('send', 'pageview', path + '?q=' + this.value);
+		}
+	});
+</script>
+
+
+</body>
+
+</html>
