@@ -363,14 +363,6 @@ Usage: /usr/bin/which [-a] args</code></pre>
 <p>會看到「<a href="http://manpages.ubuntu.com/manpages/xenial/en/man1/which.1.html">說明</a>」。</p>
 <h2 id="which">查詢 which 放在那個位置</h2>
 <p>執行</p>
-<pre class="code"><code class="language-sh">$ type which</code></pre>
-
-
-<p>顯示</p>
-<pre class="code"><code>which is hashed (/usr/bin/which)</code></pre>
-
-
-<p>執行</p>
 <pre class="code"><code class="language-sh">$ whereis which</code></pre>
 
 
@@ -393,6 +385,23 @@ Usage: /usr/bin/which [-a] args</code></pre>
 <p>顯示</p>
 <pre class="code"><code>/usr/bin/which
 /bin/which</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ type which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>which is hashed (/usr/bin/which)</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ type -a which</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>which is /usr/bin/which
+which is /bin/which</code></pre>
 
 
 <p>執行</p>
@@ -535,7 +544,7 @@ then
 fi</code></pre>
 
 
-<p>表示「/usr/bin/which」這個檔案，是安裝「[url=http://packages.ubuntu.com/xenial/debianutils]debianutils[/url]」這個套件時，</p>
+<p>表示「/usr/bin/which」這個檔案，是安裝「<a href="http://packages.ubuntu.com/xenial/debianutils">debianutils</a>」這個套件時，</p>
 <p>透過「/var/lib/dpkg/info/debianutils.postinst」這個「<a href="https://wiki.debian.org/MaintainerScripts">MaintainerScripts</a>」產生的。</p>
 <h2 id="_2">使用範例</h2>
 <p>執行</p>
